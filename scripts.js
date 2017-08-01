@@ -90,6 +90,8 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
     }
+	setGamePoints();
+	checkFinalWinner();
 
 }
 function playerPick(playerPick) {
@@ -97,19 +99,21 @@ function playerPick(playerPick) {
 
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
-
     checkRoundWinner(playerPick, computerPick);
 }
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score; //nie dodaje wartosci do computer.score
 }
-function checkFinalWinner(playerPick, computerPick) {
-  playerResultElem.innerHTML = computerResultElem.innerHTML = '';
-    if (player.score ==10) {
+function checkFinalWinner() {
+    if (player.score ==2) {
+		alert("The  Winner is " + player.name);
         playerResultElem.innerHTML = "Winner!";
+		setGameElements('ended'); //Tutaj nie wiem
         
-    } else if (computer.score == 10) {
-        computerResultElem.innerHTML = "Winer!";
+    } else if (computer.score == 2) {
+		alert("Computer won!");
+        computerResultElem.innerHTML = "Winner!";
+		setGameElements('ended'); //Tutaj nie wiem
     }
 }
