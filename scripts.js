@@ -109,13 +109,13 @@ function checkFinalWinner() {
     if (player.score ==2) {
 		alert("The  Winner is " + player.name);
         playerResultElem.innerHTML = "Winner!";
-		var gameState = 'ended'; //Tutaj nie zakańcza gry
-		setGameElements(); //Tutaj nie zakańcza gry
+		gameState = 'ended'; 
+		setGameElements(); 
         
     } else if (computer.score == 2) {
 		alert("Computer won!");
         computerResultElem.innerHTML = "Winner!";
-		var gameState = 'ended'; //Tutaj nie zakańcza gry
-		setGameElements(); //Tutaj nie zakańcza gry
+		gameState = 'ended'; 
+		setGameElements(); 
     }
 }
